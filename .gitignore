@@ -12,3 +12,4 @@
 !.yarn/versions
 test/test.md
 yarn.lock
+node_modules/**/*
