@@ -29,7 +29,7 @@ function activate(context) {
 		vscode.workspace.applyEdit(edit);
 	});
 
-	initCommand('figletText', () => {
+	init.initCommand('figletText', () => {
 		let edit = new vscode.WorkspaceEdit;
 		let figletText = figlet('Hello World!!', function(err, data) {
 			if (err) {
