@@ -4,9 +4,10 @@
 
 /.vs
 /.vscode
-.yarn/*
+.yarn/**/*
 !.yarn/cache
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+test/test.md
