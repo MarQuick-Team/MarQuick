@@ -1,6 +1,6 @@
 const vscode = require('vscode');
+const init = require('./marquicklib/init')
 const figlet = require('figlet');
-
 /**
  * @param {vscode.ExtensionContext} context
  */
@@ -11,19 +11,19 @@ var globalContext;
 
 function activate(context) {
 
-	globalContext = context;
+	let globalContext = context;
 
 	console.log('MarQuick Loaded!');
 
-	initCommand("helloWorld", () => {
+	init.initCommand("helloWorld", () => {
 		console.log('Hello World from MarQuick!');
 	});
 
-	initCommand('helloWorldPopup', () => {
+	init.initCommand('helloWorldPopup', () => {
 		vscode.window.showInformationMessage('Hello World from MarQuick!');
 	});
 
-	initCommand('helloWorldWrite', () => {
+	init.initCommand('helloWorldWrite', () => {
 		let edit = new vscode.WorkspaceEdit;
 		edit.insert(editor.document.uri, editor.selection.active, "Hello World from MarQuick!");
 		vscode.workspace.applyEdit(edit);
@@ -44,15 +44,13 @@ function activate(context) {
 	});
 }
 
-function initCommand(commandName, commandFunction) {
-	let context = globalContext;
-	vscode.commands.registerCommand('marquick.' + commandName, commandFunction);
-}
+
 
 // this method is called when your extension is deactivated
 function deactivate() {}
 
 module.exports = {
 	activate,
-	deactivate
+	deactivate,
+	globalContext
 }
