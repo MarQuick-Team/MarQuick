@@ -11,3 +11,4 @@
 !.yarn/sdks
 !.yarn/versions
 test/test.md
+yarn.lock
