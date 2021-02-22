@@ -14,7 +14,7 @@
 		"onCommand:marquick.helloWorldPopup",
 		"onCommand:marquick.helloWorldWrite"
 	],
-	"main": "./extension.js",
+	"main": "./main.js",
 	"contributes": {
 		"commands": [
 			{
