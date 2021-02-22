@@ -42,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:12.20.4"],
             ["@types/vscode", "npm:1.53.0"],
             ["eslint", "npm:7.20.0"],
+            ["figlet", "npm:1.5.0"],
             ["glob", "npm:7.1.6"],
             ["mocha", "npm:8.3.0"],
             ["typescript", "patch:typescript@npm%3A4.1.5#builtin<compat/typescript>::version=4.1.5&hash=cc6730"],
@@ -1175,6 +1176,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["figlet", [
+        ["npm:1.5.0", {
+          "packageLocation": "./.yarn/cache/figlet-npm-1.5.0-8014ee3b57-49839d8179.zip/node_modules/figlet/",
+          "packageDependencies": [
+            ["figlet", "npm:1.5.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["file-entry-cache", [
         ["npm:6.0.1", {
           "packageLocation": "./.yarn/cache/file-entry-cache-npm-6.0.1-31965cf0af-af83a41214.zip/node_modules/file-entry-cache/",
@@ -1841,6 +1851,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:12.20.4"],
             ["@types/vscode", "npm:1.53.0"],
             ["eslint", "npm:7.20.0"],
+            ["figlet", "npm:1.5.0"],
             ["glob", "npm:7.1.6"],
             ["mocha", "npm:8.3.0"],
             ["typescript", "patch:typescript@npm%3A4.1.5#builtin<compat/typescript>::version=4.1.5&hash=cc6730"],

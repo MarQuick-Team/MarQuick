@@ -941,6 +941,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"figlet@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "figlet@npm:1.5.0"
+  checksum: 49839d8179dc0a7b6f105f13348e233df79cc2959088316560c1a85af0e99466b3e85d417de2a1f87d4dd4f42c7a734b01b8290aaf1c04c80f6fcffdf7c86bde
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.0":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -1541,6 +1548,7 @@ fsevents@~2.3.1:
     "@types/node": ^12.11.7
     "@types/vscode": ^1.53.0
     eslint: ^7.19.0
+    figlet: ^1.5.0
     glob: ^7.1.6
     mocha: ^8.2.1
     typescript: ^4.1.3

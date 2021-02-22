@@ -56,6 +56,7 @@
 		"vscode-test": "^1.5.0"
 	},
 	"dependencies": {
+		"figlet": "^1.5.0",
 		"vscode": "^1.1.37"
 	}
 }
