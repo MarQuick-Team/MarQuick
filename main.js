@@ -6,19 +6,23 @@ const vscode = require('vscode');
 
 const editor = vscode.window.activeTextEditor;
 
+var globalContext;
+
 function activate(context) {
+
+	globalContext = context;
 
 	console.log('MarQuick Loaded!');
 
-	initCommand(context, "helloWorld", () => {
+	initCommand("helloWorld", () => {
 		console.log('Hello World from MarQuick!');
 	});
 
-	initCommand(context, 'helloWorldPopup', () => {
+	initCommand('helloWorldPopup', () => {
 		vscode.window.showInformationMessage('Hello World from MarQuick!');
 	});
 
-	initCommand(context, 'helloWorldWrite', () => {
+	initCommand('helloWorldWrite', () => {
 		let edit = new vscode.WorkspaceEdit;
 		edit.insert(editor.document.uri, editor.selection.active, "Hello World from MarQuick!");
 		vscode.workspace.applyEdit(edit);
@@ -26,7 +30,8 @@ function activate(context) {
 
 }
 
-function initCommand(context, commandName, commandFunction) {
+function initCommand(commandName, commandFunction) {
+	let context = globalContext;
 	vscode.commands.registerCommand('marquick.' + commandName, commandFunction);
 }
 
