@@ -10,15 +10,15 @@ function activate(context) {
 
 	console.log('MarQuick Loaded!');
 
-	initCommand("helloWorld", () => {
+	initCommand(context, "helloWorld", () => {
 		console.log('Hello World from MarQuick!');
 	});
 
-	initCommand('helloWorldPopup', () => {
+	initCommand(context, 'helloWorldPopup', () => {
 		vscode.window.showInformationMessage('Hello World from MarQuick!');
 	});
 
-	initCommand('helloWorldWrite', () => {
+	initCommand(context, 'helloWorldWrite', () => {
 		let edit = new vscode.WorkspaceEdit;
 		edit.insert(editor.document.uri, editor.selection.active, "Hello World from MarQuick!");
 		vscode.workspace.applyEdit(edit);
