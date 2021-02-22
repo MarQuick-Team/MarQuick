@@ -10,7 +10,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:marquick.helloWorld"
+		"onCommand:marquick.helloWorld",
+		"onCommand:marquick.helloWorldPopup",
+		"onCommand:marquick.helloWorldWrite"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -18,6 +20,22 @@
 			{
 				"command": "marquick.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "marquick.helloWorldPopup",
+				"title": "Hello World Popup"
+			},
+			{
+				"command": "marquick.helloWorldWrite",
+				"title": "Hello World Write"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "marquick.helloWorldWrite",
+				"key": "ctrl+f1",
+				"mac": "cmd+f1",
+				"when": "editorTextFocus"
 			}
 		]
 	},
