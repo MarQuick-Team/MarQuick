@@ -10,20 +10,24 @@ function activate(context) {
 
 	console.log('MarQuick Loaded!');
 
-	vscode.commands.registerCommand('marquick.helloWorld', function () {
+	initCommand("helloWorld", () => {
 		console.log('Hello World from MarQuick!');
 	});
 
-	vscode.commands.registerCommand('marquick.helloWorldPopup', function () {
+	initCommand('helloWorldPopup', () => {
 		vscode.window.showInformationMessage('Hello World from MarQuick!');
 	});
 
-	vscode.commands.registerCommand('marquick.helloWorldWrite', function () {
+	initCommand('helloWorldWrite', () => {
 		let edit = new vscode.WorkspaceEdit;
 		edit.insert(editor.document.uri, editor.selection.active, "Hello World from MarQuick!");
 		vscode.workspace.applyEdit(edit);
 	});
 
+}
+
+function initCommand(context, commandName, commandFunction) {
+	vscode.commands.registerCommand('marquick.' + commandName, commandFunction);
 }
 
 // this method is called when your extension is deactivated
