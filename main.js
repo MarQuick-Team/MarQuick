@@ -1,4 +1,5 @@
 const vscode = require('vscode');
+const figlet = require('figlet');
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -28,6 +29,19 @@ function activate(context) {
 		vscode.workspace.applyEdit(edit);
 	});
 
+	initCommand('figletText', () => {
+		let edit = new vscode.WorkspaceEdit;
+		let figletText = figlet('Hello World!!', function(err, data) {
+			if (err) {
+				console.log('Something went wrong...');
+				console.dir(err);
+				return;
+			}
+			return data;
+		});
+		edit.insert(editor.document.uri, editor.selection.active, "```\n" + figletText + "\n```");
+		vscode.workspace.applyEdit(edit);
+	});
 }
 
 function initCommand(commandName, commandFunction) {
